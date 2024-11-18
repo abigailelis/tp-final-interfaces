@@ -173,7 +173,7 @@ header div.nav {
 
 .contenido-principal,
 .form-content,
-div.inputs, .info-contacto{
+div.inputs, .div-maps{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -215,6 +215,12 @@ span.input-label {
 
 .logo-form {
     height: 20px;
+}
+
+.logo-contacto{
+    height: 30px;
+    width: 30px;
+    margin-right: 1em;
 }
 
 .logo-login {
@@ -336,7 +342,7 @@ a#link-olvido-password:hover{
     grid-column-start: 2;
 }
 
-.div-pago-unico, .div-suscripcion, .contenedor-pagos, .div-pago-qr, .info-mercado-pago{
+.div-pago-unico, .div-suscripcion, .contenedor-pagos, .div-pago-qr, .info-mercado-pago, .div-contacto{
     display: flex;
 }
 
@@ -350,7 +356,19 @@ a#link-olvido-password:hover{
     justify-content: center;
     align-items: center;
 }
-        
+    
+
+/*-------- CONTACTO ------------*/
+.info-contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+.div-maps{
+    flex-direction: column;
+    margin-bottom: 3em;
+}
 /*-------- BOTONES -------------*/
 
 button.btn-brown {
