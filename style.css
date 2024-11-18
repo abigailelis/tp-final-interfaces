@@ -11,8 +11,6 @@ body {
     grid-template-rows: auto 1fr auto;
 }
 
-
-
 header {
     grid-template-rows: repeat(3, 1fr);
     color: #333333;
@@ -374,7 +372,7 @@ button.btn-white:hover{
 
 .logo-donaciones{
     height: 2.5em;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .logo-pago{
@@ -401,4 +399,8 @@ button.btn-white:hover{
 
 .info-cuenta-bancaria p{
     line-height: 2.3;
+}
+
+.titulo-donaciones h1{
+    font-size: 1.8rem;
 }
