@@ -171,13 +171,13 @@ header div.nav {
 
 .contenido-principal,
 .form-content,
-div.inputs {
+div.inputs, .info-contacto{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.form-content {
+.form-content, .info-contacto{
     flex-direction: column;
     color: #99975F;
     width: 500px;
