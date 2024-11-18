@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function() { 
     cargarContenido('inicio.html');
 });
@@ -8,6 +10,23 @@ let servicios = document.getElementById('href-servicios');
 let nosotros = document.getElementById('href-nosotros');
 let login = document.getElementById('href-login');
 let publicar = document.getElementById('href-publicar');
+let index = 0;
+
+    function moveSlide(direction) {
+      const slides = document.querySelectorAll(".carrusel img");
+      index += direction;
+    
+      // Asegura que el índice esté dentro del rango de las imágenes
+      if (index >= slides.length) {
+        index = 0;
+      } else if (index < 0) {
+        index = slides.length - 1;
+      }
+    
+      // Mueve el carrusel a la imagen correspondiente
+      const offset = -index * 100; // Cada imagen ocupa el 100% del ancho
+      document.querySelector(".carrusel").style.transform = `translateX(${offset}%)`;
+    }
 
 inicio.addEventListener('click', function (event) {
     event.preventDefault();
