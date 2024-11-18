@@ -363,7 +363,7 @@ a#link-olvido-password:hover{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    margin-top: 30px;
+    margin-top: 2em;
 }
 .div-maps{
     flex-direction: column;
