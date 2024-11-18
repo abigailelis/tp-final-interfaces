@@ -1,0 +1,273 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    display: grid;
+    height: 100dvh;
+    grid-template-rows: auto 1fr auto;
+}
+
+
+
+header {
+    grid-template-rows: repeat(3, 1fr);
+    color: #333333;
+}
+
+header,
+.footer,
+.head {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+/*---------------- HEAD ---------------------*/
+.head {
+    grid-column: span 12 / span 12;
+    grid-row: span 2 / span 2;
+    background-color: #F0F0F0;
+    align-items: center;
+    justify-items: center;
+}
+
+/* DIVS / CONTENEDORES HEAD*/
+.div-logo {
+    grid-column-start: 1;
+}
+
+.div-text {
+    grid-column: span 4 / span 4;
+    grid-column-start: 2;
+    display: flex;
+    flex-direction: column;
+    justify-self: start;
+}
+
+.div-btn-donar {
+    grid-column: span 2 / span 2;
+    grid-column-start: 10;
+}
+
+.div-login {
+    grid-column-start: 12;
+}
+
+/* ELEMENTOS DEL HEAD */
+button.btn-donar {
+    width: 7em;
+    height: 2.5em;
+    background-color: #99975F;
+    box-shadow: 2px 2px 8px #445D63;
+    color: white;
+    font-weight: bold;
+}
+
+button.btn-donar:hover {
+    width: 7.5em;
+    height: 3em;
+    background-color: #C0BD96;
+    color: white;
+}
+
+.logo {
+    width: 2.5em;
+}
+
+.logo-principal {
+    width: 4.5em;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+/*---------------- NAV ---------------------*/
+header div.nav {
+    grid-column: span 12 / span 12;
+    grid-row-start: 3;
+    background-color: #445D63;
+    display: flex;
+    justify-content: center;
+}
+
+.nav ul li {
+    margin: 0 2em 0 2em;
+}
+
+.nav ul li a {
+    color: white;
+    font-weight: bold;
+}
+
+.nav ul li a:hover {
+    color: #C0BD96;
+}
+
+/*---------------- FOOTER ---------------------*/
+
+.footer {
+    gap: 20px;
+    background-color: #445D63;
+    color: white;
+    width: 100%;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+}
+
+.telefono-footer {
+    grid-column: span 2 / span 2;
+}
+
+.logo-direccion {
+    grid-column-start: 4;
+}
+
+.direccion-footer {
+    grid-column: span 3 / span 3;
+    grid-column-start: 5;
+}
+
+.logo-facebook-footer {
+    grid-column-start: 11;
+}
+
+.logo-instagram-footer {
+    grid-column-start: 12;
+}
+
+.logo-direccion,
+.logo-telefono {
+    justify-self: flex-end;
+}
+
+.logo-footer {
+    height: 30px;
+}
+
+.logo-footer-redes {
+    height: 40px;
+}
+
+/*---------------- CONTENIDO ---------------------*/
+#contenido-dinamico {
+    background-image: url('./images/bg-image.PNG');
+    background-size: cover;
+}
+
+.contenido-principal {
+    max-width: 1920px;
+    flex-direction: column;
+    padding: 30px 0 30px 0;
+}
+
+.contenido-principal,
+.form-content,
+div.inputs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-content {
+    flex-direction: column;
+    color: #99975F;
+    width: 500px;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.801);
+    box-shadow: 1px 1px 10px #656666;
+}
+
+.div-inputs,
+.input-label,
+textarea {
+    width: 80%;
+}
+
+/* Este elemento debe tener "position: relative" */
+div.inputs,
+textarea,
+.input-label {
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 5px;
+    background-color: white;
+}
+
+span.input-label {
+    margin: 0;
+}
+
+.input-label {
+    padding-left: 15px;
+}
+
+.logo-form {
+    height: 20px;
+}
+
+.logo-login {
+    height: 65px;
+}
+
+input.input,
+input.input-label,
+textarea {
+    border: none;
+    width: 100%;
+}
+
+input.input {
+    margin-left: 10px;
+}
+
+input::placeholder,
+#info-imagen-publicacion,
+textarea::placeholder,
+input,
+textarea {
+    color: #999999;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    font-size: 14px;
+}
+
+button.btn-brown {
+    background-color: #99975F;
+    color: white;
+}
+
+a#link-olvido-password {
+    text-decoration: none;
+    color: inherit;
+}
+a#link-olvido-password:hover{
+    color: #333333;
+}
+
+
+/*----- CONTENEDORES IMAGEN - ENLACE -------*/
+
+
+.contenedor-imagen-enlace{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 8px;
+}
+    
+.contenedor-enlace {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+}
+
+.contenedor-imagen {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+}
+        
