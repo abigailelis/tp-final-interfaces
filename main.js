@@ -1,16 +1,37 @@
+document.addEventListener('DOMContentLoaded', function() { 
+    cargarContenido('inicio.html');
+});
+
 let inicio = document.getElementById('href-inicio');
 let contacto = document.getElementById('href-contacto');
+let servicios = document.getElementById('href-servicios');
+let nosotros = document.getElementById('href-nosotros');
 let login = document.getElementById('href-login');
 let publicar = document.getElementById('href-publicar');
 
-login.addEventListener('click', function (event) {
+inicio.addEventListener('click', function (event) {
     event.preventDefault();
-    cargarContenido('login.html');
+    cargarContenido('inicio.html');
 })
 
 contacto.addEventListener('click', function (event) {
     event.preventDefault();
     cargarContenido('contacto.html');
+})
+
+servicios.addEventListener('click', function (event) {
+    event.preventDefault();
+    cargarContenido('servicios.html');
+})
+
+nosotros.addEventListener('click', function (event) {
+    event.preventDefault();
+    cargarContenido('nosotros.html');
+})
+
+login.addEventListener('click', function (event) {
+    event.preventDefault();
+    cargarContenido('login.html');
 })
 
 publicar.addEventListener('click', function (event) {
