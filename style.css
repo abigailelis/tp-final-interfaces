@@ -1,5 +1,4 @@
-html,
-body {
+html,body {
     height: 100%;
 }
 
@@ -16,9 +15,7 @@ header {
     color: #333333;
 }
 
-header,
-.footer,
-.head {
+header, .footer, .head {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
 }
@@ -105,6 +102,10 @@ header div.nav {
     color: #C0BD96;
 }
 
+.nav ul li a.nav-link.active {
+    color: #99975F;
+}
+
 /*---------------- FOOTER ---------------------*/
 
 .footer {
@@ -154,7 +155,7 @@ header div.nav {
 }
 
 /*---------------- CONTENIDO ---------------------*/
-#contenido-dinamico { 
+#contenido-dinamico, div.inputs, textarea, .input-label { 
     width: 100%;
 }
 
@@ -162,22 +163,20 @@ header div.nav {
     background-image: url('./images/bg-image.PNG');
     background-size: cover;
 }
-.contenido-principal{
-    max-width: 1920px;
-}
 
 .contenido-principal {
     flex-direction: column;
     padding: 30px 0 30px 0;
+    max-width: 1920px;
 }
 
-.contenido-principal,
-.form-content,
-div.inputs, .div-maps{
+.contenido-principal, .form-content, div.inputs, .div-maps{
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+/*--- FORMULARIOS ----*/
 
 .form-content, .info-contacto{
     flex-direction: column;
@@ -188,16 +187,11 @@ div.inputs, .div-maps{
     box-shadow: 1px 1px 10px #656666;
 }
 
-.div-inputs,
-.input-label,
-textarea {
+.input-label, textarea, #formulario_contacto {
     width: 80%;
 }
 
-/* Este elemento debe tener "position: relative" */
-div.inputs,
-textarea,
-.input-label {
+div.inputs, textarea, .input-label {
     border-radius: 5px;
     margin-bottom: 10px;
     width: 100%;
@@ -213,23 +207,7 @@ span.input-label {
     padding-left: 15px;
 }
 
-.logo-form {
-    height: 20px;
-}
-
-.logo-contacto{
-    height: 30px;
-    width: 30px;
-    margin-right: 1em;
-}
-
-.logo-login {
-    height: 65px;
-}
-
-input.input,
-input.input-label,
-textarea {
+input.input, input.input-label, textarea {
     border: none;
     width: 100%;
 }
@@ -238,16 +216,11 @@ input.input {
     margin-left: 10px;
 }
 
-input::placeholder,
-#info-imagen-publicacion,
-textarea::placeholder,
-input,
-textarea {
+input::placeholder, #info-imagen-publicacion, textarea::placeholder, input, textarea {
     color: #999999;
     font-family: 'Helvetica', 'Arial', sans-serif;
     font-size: 14px;
 }
-
 
 a#link-olvido-password {
     text-decoration: none;
@@ -270,6 +243,7 @@ a#link-olvido-password:hover{
     margin-bottom: 20px;
     box-shadow: 1px 1px 10px #445D63;
 }
+
 .contenedor-imagen-enlace{
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
@@ -285,12 +259,7 @@ a#link-olvido-password:hover{
     max-height: 250px;
 }
 
-.contenedor1 {
-    grid-column: span 1 / span 1;
-}
-
 .contenedor2 {
-    grid-column: span 1 / span 1;
     grid-column-start: 2;
 }
 
@@ -299,16 +268,17 @@ a#link-olvido-password:hover{
 }
 
 .contendor2-column{
-    grid-row: span 1 / span 1;
     grid-row-start: 2;
 }
         
-.contenedor-enlace{
-    background-color: #D0CD81;
+.contenedor-enlace, .div-pago-unico, .div-suscripcion, .info-mercado-pago{
     display: flex;
     flex-direction: column;
-    justify-content:space-between;
     align-items: center;
+}
+.contenedor-enlace{
+    background-color: #D0CD81;
+    justify-content:space-between;
     color: #808080;
     padding: 30px;
 }
@@ -334,6 +304,10 @@ a#link-olvido-password:hover{
     color: #808080;
 }
 
+.div-pago-unico, .div-suscripcion, .contenedor-pagos, .div-pago-qr, .info-mercado-pago, .div-contacto{
+    display: flex;
+}
+
 .info-cuenta-bancaria, .info-mercado-pago{
     width: 85%;
 }
@@ -342,19 +316,13 @@ a#link-olvido-password:hover{
     grid-column-start: 2;
 }
 
-.div-pago-unico, .div-suscripcion, .contenedor-pagos, .div-pago-qr, .info-mercado-pago, .div-contacto{
-    display: flex;
-}
-
 .contenedor-pagos{
     justify-content: space-between;
     width: 90%;
 }
 
 .div-pago-unico, .div-suscripcion, .info-mercado-pago{
-    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
     
 
@@ -365,10 +333,12 @@ a#link-olvido-password:hover{
     justify-content: flex-start;
     margin-top: 2em;
 }
+
 .div-maps{
     flex-direction: column;
     margin-bottom: 3em;
 }
+
 /*-------- BOTONES -------------*/
 
 button.btn-brown {
@@ -407,6 +377,20 @@ button.btn-white:hover{
     height: 3em;
 }
 
+.logo-form {
+    height: 20px;
+}
+
+.logo-contacto{
+    height: 30px;
+    width: 30px;
+    margin-right: 1em;
+}
+
+.logo-login {
+    height: 65px;
+}
+
 /*-- textos --*/
 
 .texto-resaltado, .contenedor-donaciones span{
@@ -423,6 +407,11 @@ button.btn-white:hover{
 
 .titulo-donaciones h1{
     font-size: 1.8rem;
+}
+
+.error { 
+    color: red; 
+    display: none; 
 }
 
 /*-- carrusel ---*/

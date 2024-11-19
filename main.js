@@ -1,6 +1,6 @@
 
 
-document.addEventListener('DOMContentLoaded', function() { 
+document.addEventListener('DOMContentLoaded', function () {
     cargarContenido('inicio.html');
 });
 
@@ -14,21 +14,16 @@ let index = 0;
 let donar = document.getElementById('btn-donar');
 let contenido_dinamico = document.getElementById('contenido-dinamico');
 
-    function moveSlide(direction) {
-      const slides = document.querySelectorAll(".carrusel img");
-      index += direction;
-    
-      // Asegura que el índice esté dentro del rango de las imágenes
-      if (index >= slides.length) {
-        index = 0;
-      } else if (index < 0) {
-        index = slides.length - 1;
-      }
-    
-      // Mueve el carrusel a la imagen correspondiente
-      const offset = -index * 100; // Cada imagen ocupa el 100% del ancho
-      document.querySelector(".carrusel").style.transform = `translateX(${offset}%)`;
-    }
+/*-- Cambia el color del link del nav correspondiente a la pagina abierta --*/
+let links = document.querySelectorAll('.nav-link');
+links.forEach(link => { 
+    link.addEventListener('click', function() { 
+        document.querySelectorAll('.nav-link').forEach(link => 
+            link.classList.remove('active')); 
+            this.classList.add('active');     
+    }); 
+});
+
 
 inicio.addEventListener('click', function (event) {
     event.preventDefault();
@@ -39,7 +34,26 @@ inicio.addEventListener('click', function (event) {
 contacto.addEventListener('click', function (event) {
     event.preventDefault();
     contenido_dinamico.classList.add('bg-img');
-    cargarContenido('contacto.html');
+    fetch('contacto.html')
+        .then(response => response.text())
+        .then(data => {
+            contenido_dinamico.innerHTML = data;
+            const emailInput = document.getElementById('e-mail-contacto'); 
+            const errorEmail = document.getElementById('errorEmail'); 
+            emailInput.addEventListener('input', function() { 
+                const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+                if (emailPattern.test(emailInput.value))
+                    errorEmail.style.display = 'none'; 
+                else 
+                    errorEmail.style.display = 'inline'; 
+            });
+            document.getElementById('formulario_contacto').addEventListener('submit', function (event) {
+                event.preventDefault();
+                    errorEmail.style.display = 'none';
+                    alert('Formulario enviado correctamente');
+            });
+        })
+        .catch(error => console.error('Error al cargar el contenido:', error));
 })
 
 servicios.addEventListener('click', function (event) {
@@ -95,3 +109,19 @@ function cargarContenidoBtn(html, btn) {
         .catch(error => console.error('Error al cargar el contenido:', error));
 }
 
+
+function moveSlide(direction) {
+    const slides = document.querySelectorAll(".carrusel img");
+    index += direction;
+
+    // Asegura que el índice esté dentro del rango de las imágenes
+    if (index >= slides.length) {
+        index = 0;
+    } else if (index < 0) {
+        index = slides.length - 1;
+    }
+
+    // Mueve el carrusel a la imagen correspondiente
+    const offset = -index * 100; // Cada imagen ocupa el 100% del ancho
+    document.querySelector(".carrusel").style.transform = `translateX(${offset}%)`;
+}
