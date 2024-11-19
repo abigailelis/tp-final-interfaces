@@ -61,13 +61,6 @@ button.btn-donar {
     font-weight: bold;
 }
 
-button.btn-donar:hover {
-    width: 7.5em;
-    height: 3em;
-    background-color: #C0BD96;
-    color: white;
-}
-
 .logo {
     width: 2.5em;
 }
@@ -105,6 +98,7 @@ header div.nav {
 .nav ul li a.nav-link.active {
     color: #99975F;
 }
+
 
 /*---------------- FOOTER ---------------------*/
 
@@ -155,7 +149,7 @@ header div.nav {
 }
 
 /*---------------- CONTENIDO ---------------------*/
-#contenido-dinamico, div.inputs, textarea, .input-label { 
+#contenido-dinamico{ 
     width: 100%;
 }
 
@@ -231,6 +225,10 @@ a#link-olvido-password:hover{
     color: #333333;
 }
 
+#info-imagen-publicacion{
+    max-width: 15em;
+    overflow: hidden;
+}
 
 /*----- CONTENEDORES IMAGEN - ENLACE -------*/
 
@@ -346,6 +344,11 @@ button.btn-brown {
     color: white;
 }
 
+button.btn-brown:hover {
+    background-color: #605f3b;
+    color: white;
+}
+
 button.btn-white{
     background-color: white;
     color: #4D4D4D;
@@ -356,6 +359,10 @@ button.btn-white{
 button.btn-white:hover{
     background-color: white;
     color:#99975F;
+}
+
+button#btn-cerrar-sesion{
+    margin-top: 3em;
 }
 
 /*-- LOGOS ---*/
@@ -405,15 +412,25 @@ button.btn-white:hover{
     line-height: 2.3;
 }
 
-.titulo-donaciones h1{
+.titulo-donaciones h1, .form-content h1{
     font-size: 1.8rem;
 }
 
-.error { 
-    color: red; 
-    display: none; 
+.error, #msj_error { 
+    color: rgb(183, 51, 51); 
 }
 
+#msj_sesion_iniciada{
+    color:#99975F;
+}
+
+#msj_error{
+    margin: 15px;
+}
+
+#msj_error p{
+    line-height: .5;
+}
 /*-- carrusel ---*/
 .carrusel-container {
     position: relative;
@@ -478,4 +495,8 @@ button.btn-white:hover{
   .carrusel-container .btn:hover {
     background-color: white;
     color:#99975F;
+}
+
+.oculto{
+    display: none !important;   
 }

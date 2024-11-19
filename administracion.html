@@ -2,28 +2,30 @@
     <section class="form-content">
         <h1>Nueva publicación</h1>
 
-        <div class="d-grid gap-2 div-inputs">
-            <form action="">
+        <form action="">
+            <div class="d-grid gap-2 div-inputs">
                 <div class="inputs-label">
                     <label for="titulo-publicacion">Titulo</label>
                     <input type="text" name="titulo-publicacion" id="titulo-publicacion" class="input-label"
-                        placeholder="Ingrese el titulo de la publicación">
+                        placeholder="Ingrese el titulo de la publicación" required>
                 </div>
+                
                 <div class="inputs-label">
                     <label for="descripcion-publicacion">Descripción</label>
                     <textarea name="descripcion-publicacion" id="descripcion-publicacion" rows="4" class="input-label"
-                        placeholder="Ingrese una breve descripción"></textarea>
+                        placeholder="Ingrese una breve descripción" required></textarea>
                 </div>
 
                 <div class="inputs">
                     <img src="images/logo-subir-imagen.png" id="btn-cargar-imagen" class="logo-form icon"
                         style="cursor: pointer;" alt="logo de subir imagen">
                     <span id="info-imagen-publicacion" class="input-label">Subir imágen</span>
-                    <input type="file" name="imagen-publicacion" id="imagen-publicacion" style="display: none;">
+                    <input type="file" name="imagen-publicacion" id="imagen-publicacion" style="display: none;"
+                        required>
                 </div>
-            </form>
 
-            <button class="btn btn-brown" type="button" id="btn-subir-publicacion">Continuar</button>
-        </div>
+                <button class="btn btn-brown" type="submit" id="btn-subir-publicacion">Continuar</button>
+            </div>
+        </form>
     </section>
 </div>
