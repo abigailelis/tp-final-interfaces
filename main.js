@@ -124,9 +124,9 @@ function cargarNosotros() {
             parrafoVisible.classList.toggle('oculto');
 
             if (parrafoOculto.classList.contains('oculto'))
-                this.textContent = 'Cerrar';
-            else
                 this.textContent = 'Ver más';
+            else
+                this.textContent = 'Cerrar';
         });
     });
 
