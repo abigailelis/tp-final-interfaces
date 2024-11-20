@@ -5,19 +5,15 @@ html,body {
 body {
     margin: 0;
     font-family: Helvetica, Arial, sans-serif;
-    display: grid;
     height: 100dvh;
-    grid-template-rows: auto 1fr auto;
 }
 
 header {
-    grid-template-rows: repeat(3, 1fr);
     color: #333333;
 }
 
 header, .footer, .head {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
 }
 
 /*---------------- HEAD ---------------------*/
@@ -27,6 +23,7 @@ header, .footer, .head {
     background-color: #F0F0F0;
     align-items: center;
     justify-items: center;
+    padding: 10px;
 }
 
 /* DIVS / CONTENEDORES HEAD*/
@@ -43,8 +40,8 @@ header, .footer, .head {
 }
 
 .div-btn-donar {
-    grid-column: span 2 / span 2;
-    grid-column-start: 10;
+    grid-column: span 0 / span 0;
+    grid-column-start: 11;
 }
 
 .div-login {
@@ -74,7 +71,7 @@ button.btn-donar {
 }
 
 /*---------------- NAV ---------------------*/
-header div.nav {
+div.nav {
     grid-column: span 12 / span 12;
     grid-row-start: 3;
     background-color: #445D63;
@@ -521,4 +518,99 @@ button#btn-cerrar-sesion{
 
 .hidden {
     display: none;
+}
+
+/* ------- SERVICIOS MOBILE -------- */
+
+@media (max-width: 1224px) {
+
+    .container.contenido-principal {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenedor-imagen-enlace {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 250px;
+    }
+
+    .contenedor-enlace {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 1px 1px 10px #445D63;
+    }
+
+    .contenedor-enlace h3 {
+        font-size: 1.5rem; 
+    }
+
+    .imagen-link {
+        width: 100%;
+        box-shadow: 1px 1px 10px #445D63;
+    }
+
+    .div-text {
+        display: none;
+    }
+    
+    .div-btn-donar {
+        display: flex;
+        justify-content: end;
+    }
+    
+    .div-login {
+        display: flex;
+        justify-content: end;
+    }
+}
+
+@media (max-width: 1000px) {
+
+    .contenedor-imagen-enlace {
+        margin-bottom: 20px !important;
+    }
+    
+    .error, #msj_error { 
+        color: rgb(183, 51, 51); 
+    }
+
+    #msj_sesion_iniciada{
+        color:#99975F;
+    }
+
+    #msj_error{
+        margin: 15px;
+    }
+
+    #msj_error p{
+        line-height: .5;
+    }
+
+    .info-servicios h2{
+        font-size: 1.5rem;
+    }
+
+    .contenedor-servicios h1{
+        margin-bottom: 1em;
+    }
+
+    .div-logo {
+        grid-column-start: 1;
+    }
+
+    /* ELEMENTOS DEL HEAD */
+    button.btn-donar {
+        width: 5em;
+        height: 2.5em;
+    }
+
+    .logo-principal {
+        width: 4em;
+    }
+
+    div.nav {
+        justify-content:flex-start;
+    }
 }
