@@ -516,3 +516,7 @@ button#btn-cerrar-sesion{
 .oculto{
     display: none !important;   
 }
+
+.hidden {
+    display: none;
+}
