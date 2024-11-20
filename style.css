@@ -135,8 +135,7 @@ header div.nav {
     grid-column-start: 12;
 }
 
-.logo-direccion,
-.logo-telefono {
+.logo-direccion,.logo-telefono {
     justify-self: flex-end;
 }
 
@@ -151,6 +150,7 @@ header div.nav {
 /*---------------- CONTENIDO ---------------------*/
 #contenido-dinamico{ 
     width: 100%;
+    color: #555555;
 }
 
 .bg-img{
@@ -158,13 +158,12 @@ header div.nav {
     background-size: cover;
 }
 
-.contenido-principal {
-    flex-direction: column;
-    padding: 30px 0 30px 0;
-    max-width: 1920px;
+div.contenido-principal {
+    padding: 3em 0 3em 0;
+    max-width: 50em;
 }
 
-.contenido-principal, .form-content, div.inputs, .div-maps{
+.form-content, div.inputs, .div-maps{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,7 +232,7 @@ a#link-olvido-password:hover{
 /*----- CONTENEDORES IMAGEN - ENLACE -------*/
 
 .contenedor-imagen-enlace-column{
-    max-width: 800px;
+    max-width: 30em;
 }
 
 .contenedor-imagen-enlace-column, .contenedor-imagen-enlace{
@@ -244,25 +243,28 @@ a#link-olvido-password:hover{
 
 .contenedor-imagen-enlace{
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
+    grid-template-rows: repeat(1, auto);
 }
 
 .contenedor-imagen-enlace-column{
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
 }
 
 .imagen-link, .contenedor1, .contenedor2, .contenedor-imagen-enlace{
     width: 100%;
-    max-height: 250px;
+}
+.imagen-link{
+    min-height: 100%;
 }
 
+.imagen-link-column{
+    width: 100%;
+    max-height: 20em;
+    object-fit: cover;
+}
 .contenedor2 {
     grid-column-start: 2;
-}
-
-.contendor1-column { 
-    max-height: 350px;
 }
 
 .contendor2-column{
@@ -335,6 +337,12 @@ a#link-olvido-password:hover{
 .div-maps{
     flex-direction: column;
     margin-bottom: 3em;
+}
+
+/*--- CONTENEDORES SERVICIOS -----*/
+
+.info-servicios{
+    margin: 1em 0 1em 0;
 }
 
 /*-------- BOTONES -------------*/
@@ -412,7 +420,7 @@ button#btn-cerrar-sesion{
     line-height: 2.3;
 }
 
-.titulo-donaciones h1, .form-content h1{
+.titulo-donaciones h1, .form-content h1, .contenedor-servicios h1{
     font-size: 1.8rem;
 }
 
@@ -431,6 +439,13 @@ button#btn-cerrar-sesion{
 #msj_error p{
     line-height: .5;
 }
+
+.info-servicios h2{
+    font-size: 1.5rem;
+}
+.contenedor-servicios h1{
+    margin-bottom: 1em;
+}
 /*-- carrusel ---*/
 .carrusel-container {
     position: relative;
@@ -438,6 +453,7 @@ button#btn-cerrar-sesion{
     height: 70vh;
     overflow: hidden;
     border-radius: 10px;
+    margin: 2em 0 2em 0;
 }
   
 .carrusel {
@@ -490,9 +506,9 @@ button#btn-cerrar-sesion{
     color: #4D4D4D;
     box-shadow: 2px 2px 8px #445D63;
     padding: 10px 50px 10px 50px;
-  }
+}
   
-  .carrusel-container .btn:hover {
+.carrusel-container .btn:hover {
     background-color: white;
     color:#99975F;
 }

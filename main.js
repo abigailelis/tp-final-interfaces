@@ -2,14 +2,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
     manejarClick(event, 'inicio.html', false);
 });
 
-let inicio = document.getElementById('href-inicio');
-let contacto = document.getElementById('href-contacto');
-let servicios = document.getElementById('href-servicios');
-let nosotros = document.getElementById('href-nosotros');
-let login = document.getElementById('href-login');
-let publicar = document.getElementById('href-publicar');
-let donar = document.getElementById('btn-donar');
 let contenido_dinamico = document.getElementById('contenido-dinamico');
+let esta_logueado = false;
+let link_publicar = document.getElementById('link-publicar');
 
 /*-- Cambia el color del link del nav correspondiente a la pagina abierta --*/
 
@@ -24,6 +19,23 @@ links.forEach(link => {
 
 /*-- función que maneja los eventos de escucha de los links y botones principales --*/
 
+
+const botones = [
+    { id: 'href-inicio', url: 'inicio.html', agregarClase: false },
+    { id: 'href-contacto', url: 'contacto.html', agregarClase: true },
+    { id: 'href-servicios', url: 'servicios.html', agregarClase: false },
+    { id: 'href-nosotros', url: 'nosotros.html', agregarClase: false },
+    { id: 'href-login', url: 'login.html', agregarClase: true },
+    { id: 'href-publicar', url: 'administracion.html', agregarClase: true },
+    { id: 'btn-donar', url: 'donacion.html', agregarClase: false }
+];
+
+botones.forEach(boton => {
+    document.getElementById(boton.id).addEventListener('click', function (event) {
+        manejarClick(event, boton.url, boton.agregarClase);
+    });
+});
+
 function manejarClick(event, url, agregarClase) {
     event.preventDefault();
     if (agregarClase)
@@ -33,80 +45,111 @@ function manejarClick(event, url, agregarClase) {
     cargarContenido(url);
 }
 
-inicio.addEventListener('click', function (event) {
-    manejarClick(event, 'inicio.html', false);
-})
-
-contacto.addEventListener('click', function (event) {
-    manejarClick(event, 'contacto.html', true);
-})
-
-servicios.addEventListener('click', function (event) {
-    manejarClick(event, 'servicios.html', false);
-})
-
-nosotros.addEventListener('click', function (event) {
-    manejarClick(event, 'nosotros.html', false);
-})
-
-login.addEventListener('click', function (event) {
-    manejarClick(event, 'login.html', true);
-})
-
-publicar.addEventListener('click', function (event) {
-    manejarClick(event, 'administracion.html', true);
-})
-
-donar.addEventListener('click', function (event) {
-    manejarClick(event, 'donacion.html', false);
-})
-
 /* -- función que cambia las páginas dinamicamente -- */
 
 function cargarContenido(html) {
+
+    if (esta_logueado)
+        link_publicar.classList.remove('oculto');
+    else
+        link_publicar.classList.add('oculto');
+
+    const funciones = {
+        'inicio.html': cargarInicio,
+        'nosotros.html': cargarNosotros,
+        'contacto.html': cargarContacto,
+        'servicios.html': cargarServicios,
+        'donacion.html': cargarDonaciones,
+        'login.html': cargarLogin,
+        'administracion.html': cargarAdministracion
+    };
+
     fetch(html)
         .then(response => response.text())
         .then(data => {
             contenido_dinamico.innerHTML = data;
-            switch (html) {
-                case 'inicio.html': cargarInicio();
-                    break;
-                case 'nosotros.html': cargarNosotros();
-                    break;
-                case 'contacto.html': cargarContacto();
-                    break;
-                case 'servicios.html': cargarServicios();
-                    break;
-                case 'donacion.html': cargarDonaciones();
-                    break;
-                case 'login.html': cargarLogin();
-                    break;
-                case 'administracion.html': cargarAdministracion();
-                    break;
-                default: cargarInicio();
-            }
+            (funciones[html] || cargarInfoServicios)();
         })
         .catch(error => console.error('Error al cargar el contenido:', error));
 }
 
-function cargarInicio(){
+function cargarInfoServicios(){
+    //Ver como solucionar los multiples carrusel;
+}
+
+function cargarInicio() {
+    const botones = [
+        { id: 'btn-ver-servicios', url: 'servicios.html', agregarClase: false },
+        { id: 'btn-ver-contacto', url: 'contacto.html', agregarClase: true },
+        { id: 'btn-ver-nosotros', url: 'nosotros.html', agregarClase: false }
+    ];
+
+    botones.forEach(boton => {
+        document.getElementById(boton.id).addEventListener('click', function (event) {
+            manejarClick(event, boton.url, boton.agregarClase);
+        });
+    });
+
+    document.getElementById('btn-ver-galeria').addEventListener('click', cargarGaleria);
+}
+
+
+function cargarGaleria() {
 
 }
+
+function cargarDonaciones() {
+
+}
+
+function cargarNosotros() {
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function () {
+            const parrafoOculto = this.previousElementSibling;
+            const parrafoVisible = parrafoOculto.previousElementSibling;
+
+            parrafoOculto.classList.toggle('oculto');
+            parrafoVisible.classList.toggle('oculto');
+
+            if (parrafoOculto.classList.contains('oculto'))
+                this.textContent = 'Cerrar';
+            else
+                this.textContent = 'Ver más';
+        });
+    });
+
+}
+
+function cargarServicios() {
+    const botones = [
+        { id: 'btn-ver-hogar', url: 'hogar.html' },
+        { id: 'btn-ver-centro-dia', url: 'centroDia.html' },
+        { id: 'btn-ver-taller', url: 'taller.html' }
+    ];
+
+    botones.forEach(boton => {
+        document.getElementById(boton.id).addEventListener('click', function (event) {
+            event.preventDefault();
+            cargarContenido(boton.url);
+        });
+    });
+}
+
 
 /* Carga la pagina de publicar, solo se puede acceder estando logueado como administración */
 
 function cargarAdministracion() {
     document.getElementById('btn-cargar-imagen').addEventListener('click', function () {
         document.getElementById('imagen-publicacion').click();
-        document.getElementById('imagen-publicacion').addEventListener('change', function(event) { 
-            const file = event.target.files[0]; 
-            if (file) { 
-                const reader = new FileReader(); 
-                reader.onload = function(e) { 
+        document.getElementById('imagen-publicacion').addEventListener('change', function (event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
                     document.getElementById('info-imagen-publicacion').innerHTML = e.target.result;
-                }; 
-                reader.readAsDataURL(file); 
-            } 
+                };
+                reader.readAsDataURL(file);
+            }
         });
     });
 }
@@ -125,50 +168,64 @@ function cargarContacto() {
 
 /* Carga la pagina de login con el control de email en tiempo real y contraseña valida */
 
-function cargarLogin(){
-    let email = 'administracion@gmail.com';
-    let password = '123456789';
-    let titulo = document.getElementById('titulo-login');
-    let btn_cerrar_sesion = document.getElementById('btn-cerrar-sesion');
-    let form = document.getElementById('form-login');
-    let link_publicar = document.getElementById('link-publicar');
-
+function cargarLogin() {
+    actualizarEstadoSesion();
+    const form = document.getElementById('form-login');
+    const btnCerrarSesion = document.getElementById('btn-cerrar-sesion');
     const errorEmail = document.getElementById('errorEmail');
-    const msj_error = document.getElementById('msj_error');
-    const msj_exito = document.getElementById('msj_sesion_iniciada');
-    
+
     controlarEmail('email', errorEmail);
 
-    form.addEventListener('submit', function(event){
-        event.preventDefault();
-        let email_input = document.getElementById('email').value;
-        let password_input = document.getElementById('password').value;
-        if(email == email_input && password == password_input){
-            titulo.innerHTML = 'Cerrar sesión';
-            errorEmail.classList.add('oculto');
-            msj_error.classList.add('oculto');
-            msj_exito.classList.remove('oculto');
-            activarOcultarfunciones(btn_cerrar_sesion, form, link_publicar);
-        }
-        else{
-            msj_error.classList.remove('oculto');
-        }
-    })
-
-    btn_cerrar_sesion.addEventListener('click', function(event){
-        event.preventDefault();
-        titulo.innerHTML = 'Iniciar sesión';
-        msj_exito.classList.add('oculto');
-        activarOcultarfunciones(btn_cerrar_sesion, form, link_publicar);
-    })
+    form.addEventListener('submit', manejarSubmit);
+    btnCerrarSesion.addEventListener('click', manejarCerrarSesion);
 }
 
+const email = 'administracion@gmail.com';
+const password = '123456789';
 
-/* Activa u oculta funciones, segun usuario común o logueado */
-function activarOcultarfunciones(btn_cerrar_sesion, form, link_publicar){
-    btn_cerrar_sesion.classList.toggle('oculto');
-    form.classList.toggle('oculto');
-    link_publicar.classList.toggle('oculto');
+function manejarSubmit(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById('email').value;
+    const passwordInput = document.getElementById('password').value;
+    if (email === emailInput && password === passwordInput) {
+        esta_logueado = true;
+        actualizarEstadoSesion();
+    } else {
+        document.getElementById('msj_error').classList.remove('oculto');
+    }
+}
+
+function manejarCerrarSesion(event) {
+    event.preventDefault();
+    esta_logueado = false;
+    actualizarEstadoSesion();
+}
+
+function actualizarEstadoSesion() {
+    const titulo = document.getElementById('titulo-login');
+    const errorEmail = document.getElementById('errorEmail');
+    const msjError = document.getElementById('msj_error');
+    const msjExito = document.getElementById('msj_sesion_iniciada');
+    const btnCerrarSesion = document.getElementById('btn-cerrar-sesion');
+    const form = document.getElementById('form-login');
+
+    if (esta_logueado) {
+        titulo.innerHTML = 'Cerrar sesión';
+        ocultarElementos(errorEmail, msjError, form);
+        mostrarElementos(msjExito, link_publicar, btnCerrarSesion);
+    } else {
+        titulo.innerHTML = 'Iniciar sesión';
+        ocultarElementos(msjExito, link_publicar, btnCerrarSesion);
+        mostrarElementos(form);
+    }
+}
+
+function mostrarElementos(...elementos) {
+    elementos.forEach(elemento => elemento.classList.remove('oculto'));
+}
+
+function ocultarElementos(...elementos) {
+    elementos.forEach(elemento => elemento.classList.add('oculto'));
 }
 
 /* Controla email valido en tiempo real */
@@ -184,9 +241,6 @@ function controlarEmail(email, errorEmail) {
             errorEmail.classList.remove('oculto');
     });
 }
-
-
-
 
 /* Función del carrusel */
 let index = 0;
