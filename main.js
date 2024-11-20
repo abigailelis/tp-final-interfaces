@@ -85,7 +85,7 @@ function cargarContenido(html) {
         .catch(error => console.error('Error al cargar el contenido:', error));
 }
 
-function cargarInfoServicios(){
+function cargarInfoServicios() {
     //Ver como solucionar los multiples carrusel;
 }
 
@@ -102,7 +102,7 @@ function cargarInicio() {
         });
     });
 
-    document.getElementById('btn-ver-galeria').addEventListener('click', cargarGaleria);
+    document.getElementById('btnVerGallery').addEventListener('click', cargarGaleria);
 }
 
 
@@ -185,11 +185,13 @@ function cargarLogin() {
     const form = document.getElementById('form-login');
     const btnCerrarSesion = document.getElementById('btn-cerrar-sesion');
     const errorEmail = document.getElementById('errorEmail');
+    const password_reset = document.getElementById('link-olvido-password');
 
     controlarEmail('email', errorEmail);
 
     form.addEventListener('submit', manejarSubmit);
     btnCerrarSesion.addEventListener('click', manejarCerrarSesion);
+    password_reset.addEventListener('click', resetPasword);
 }
 
 const email = 'administracion@gmail.com';
@@ -213,13 +215,21 @@ function manejarCerrarSesion(event) {
     actualizarEstadoSesion();
 }
 
+function resetPasword() {
+    ocultarElementos(document.getElementById('form-login'));
+    let msj = document.getElementById('msj_sesion');
+    mostrarElementos(msj)
+    msj.innerHTML = 'Se ha enviado un correo de restauración de contraseña a su casilla.'
+}
+
 function actualizarEstadoSesion() {
     const titulo = document.getElementById('titulo-login');
     const errorEmail = document.getElementById('errorEmail');
     const msjError = document.getElementById('msj_error');
-    const msjExito = document.getElementById('msj_sesion_iniciada');
+    const msjExito = document.getElementById('msj_sesion');
     const btnCerrarSesion = document.getElementById('btn-cerrar-sesion');
     const form = document.getElementById('form-login');
+
 
     if (esta_logueado) {
         titulo.innerHTML = 'Cerrar sesión';
