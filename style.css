@@ -523,6 +523,9 @@ button#btn-cerrar-sesion{
 /* ------- SERVICIOS MOBILE -------- */
 
 @media (max-width: 1224px) {
+    .navbar-toggler {
+        background-color: white !important;
+    }
 
     .container.contenido-principal {
         display: flex;
