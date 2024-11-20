@@ -17,18 +17,6 @@ links.forEach(link => {
     });
 });
 
-function openGallery() {
-    const galleryContainer = document.getElementById('gallery');
-    const btnGallery = document.getElementById('btnVerGallery');
-
-    if (!galleryContainer || !btnGallery) {
-        console.error('No se encontraron los elementos especificados.');
-        return;
-    }
-
-    galleryContainer.classList.toggle('hidden');
-}
-
 /*-- función que maneja los eventos de escucha de los links y botones principales --*/
 
 
