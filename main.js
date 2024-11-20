@@ -269,3 +269,14 @@ function moveSlide(direction) {
     const offset = -index * 100; // Cada imagen ocupa el 100% del ancho
     document.querySelector(".carrusel").style.transform = `translateX(${offset}%)`;
 }
+function openGallery() {
+    const galleryContainer = document.getElementById('gallery');
+    const btnGallery = document.getElementById('btnVerGallery');
+
+    if (!galleryContainer || !btnGallery) {
+        console.error('No se encontraron los elementos especificados.');
+        return;
+    }
+
+    galleryContainer.classList.toggle('hidden');
+}

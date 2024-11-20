@@ -243,7 +243,7 @@ a#link-olvido-password:hover{
 
 .contenedor-imagen-enlace{
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, auto);
+    grid-template-rows: repeat(1, 1fr);
 }
 
 .contenedor-imagen-enlace-column{
@@ -517,4 +517,8 @@ button#btn-cerrar-sesion{
 
 .oculto{
     display: none !important;   
+}
+
+.hidden {
+    display: none;
 }
