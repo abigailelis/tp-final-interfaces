@@ -2,7 +2,7 @@
     <section class="form-content">
         <h1>Nueva publicación</h1>
 
-        <form action="">
+        <form action="" id="form_publicacion">
             <div class="d-grid gap-2 div-inputs">
                 <div class="inputs-label">
                     <label for="titulo-publicacion">Titulo</label>
@@ -24,8 +24,21 @@
                         required>
                 </div>
 
-                <button class="btn btn-brown" type="submit" id="btn-subir-publicacion">Continuar</button>
+                <button class="btn btn-brown" type="submit" data-toggle="modal" data-target="myModal" id="btn-subir-publicacion">Continuar</button>
             </div>
         </form>
+        <!-- Modal -->
+        <div class="modal" tabindex="-1" role="dialog" id="myModal">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Nueva publicación</h5>
+                </div>
+                <div class="modal-body">
+                  <p id="msj">La publicación se ha subido correctamente.</p>
+                </div>
+              </div>
+            </div>
+          </div>
     </section>
 </div>
