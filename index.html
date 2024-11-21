@@ -1,150 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <title>Todo Para Ellos</title>
-  </head>
 
-  <body>
-    <!-- Header -->
-    <header>
-      <!-- Head -->
-      <div class="head">
-        <div class="div-logo">
-          <img
-            src="images/logo-principal.png"
-            class="logo-principal"
-            alt="logo de 'Todo para Ellos'"
-          />
-        </div>
-        <div class="div-text">
-          <span class="fs-2">TODO PARA ELLOS</span>
-          <span class="font-12"
-            >Asociación de Padres y Amigos del Discapacitado</span
-          >
-        </div>
-        <div class="div-btn-donar">
-          <button type="button" class="btn btn-donar btn-brown" id="btn-donar">
-            DONAR
-          </button>
-        </div>
-        <div class="div-login">
-          <a href="login" id="href-login">
-            <img
-              src="images/login.png"
-              class="logo"
-              alt="logo de iniciar sesión"
-            />
-          </a>
-        </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <title>Todo Para Ellos</title>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <!-- Head -->
+    <div class="head">
+      <div class="div-logo">
+        <img src="images/logo-principal.png" class="logo-principal" alt="logo de 'Todo para Ellos'" />
       </div>
-    </header>
-    <!-- Nav -->
-    <div class="nav">
-      <div class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="INICIO" id="href-inicio">INICIO</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="SERVICIOS" id="href-servicios"
-                  >SERVICIOS</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="CONTACTO" id="href-contacto"
-                  >CONTACTO</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="NOSOTROS" id="href-nosotros"
-                  >NOSOTROS</a
-                >
-              </li>
-              <li class="nav-item oculto" id="link-publicar">
-                <a class="nav-link" href="PUBLICAR" id="href-publicar"
-                  >PUBLICAR</a
-                >
-              </li>
-            </ul>
-          </div>
+      <div class="div-text">
+        <span class="fs-2">TODO PARA ELLOS</span>
+        <span class="font-12">Asociación de Padres y Amigos del Discapacitado</span>
+      </div>
+      <div class="div-btn-donar">
+        <button type="button" class="btn btn-donar btn-brown" id="btn-donar">
+          DONAR
+        </button>
+      </div>
+      <div class="div-login">
+        <a href="login" id="href-login">
+          <img src="images/login.png" class="logo" alt="logo de iniciar sesión" />
+        </a>
+      </div>
+    </div>
+  </header>
+  <!-- Nav -->
+  <div class="nav">
+    <div class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="INICIO" id="href-inicio">INICIO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="SERVICIOS" id="href-servicios">SERVICIOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="CONTACTO" id="href-contacto">CONTACTO</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="NOSOTROS" id="href-nosotros">NOSOTROS</a>
+            </li>
+            <li class="nav-item oculto" id="link-publicar">
+              <a class="nav-link" href="PUBLICAR" id="href-publicar">PUBLICAR</a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Contenido dinamico -->
-    <main id="contenido-dinamico"></main>
+  <!-- Contenido dinamico -->
+  <main id="contenido-dinamico"></main>
 
-    <!--Footer -->
-    <footer>
-      <div class="footer">
-        <div class="logo-telefono">
-          <img
-            src="images/logo-telefono-blanco.png"
-            class="logo-footer"
-            alt="logo de telefono"
-          />
-        </div>
-        <div class="telefono-footer">
-          <p>(+54) 2262 43-7235</p>
-        </div>
-        <div class="logo-direccion">
-          <img
-            src="images/logo-direccion-blanco.png"
-            class="logo-footer"
-            alt="logo de dirección"
-          />
-        </div>
-        <div class="direccion-footer">
-          <p>Calle 79 Nº 675 - Necochea (7630)</p>
-        </div>
-        <div class="logo-facebook-footer">
-          <a href="https://www.facebook.com/todoparaellos.necochea/">
-            <img
-              src="images/logo-facebook-blanco.png"
-              class="logo-footer-redes"
-              alt="logo de facebook"
-            />
-          </a>
-        </div>
-        <div class="logo-instagram-footer">
-          <a href="https://www.instagram.com/todoparaellosnecochea/">
-            <img
-              src="images/logo-instagram-blanco.png"
-              class="logo-footer-redes"
-              alt="logo de instagram"
-            />
-          </a>
-        </div>
+  <!--Footer -->
+  <footer>
+    <div class="footer">
+      <div class="logo-telefono">
+        <img src="images/logo-telefono-blanco.png" class="logo-footer" alt="logo de telefono" />
       </div>
-    </footer>
+      <div class="telefono-footer">
+        <p>(+54) 2262 43-7235</p>
+      </div>
+      <div class="logo-direccion">
+        <img src="images/logo-direccion-blanco.png" class="logo-footer" alt="logo de dirección" />
+      </div>
+      <div class="direccion-footer">
+        <p>Calle 79 Nº 675 - Necochea (7630)</p>
+      </div>
+      <div class="logo-facebook-footer">
+        <a href="https://www.facebook.com/todoparaellos.necochea/">
+          <img src="images/logo-facebook-blanco.png" class="logo-footer-redes" alt="logo de facebook" />
+        </a>
+      </div>
+      <div class="logo-instagram-footer">
+        <a href="https://www.instagram.com/todoparaellosnecochea/">
+          <img src="images/logo-instagram-blanco.png" class="logo-footer-redes" alt="logo de instagram" />
+        </a>
+      </div>
+    </div>
+  </footer>
 
-    <script src="main.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <script src="main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
 </html>

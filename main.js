@@ -19,7 +19,6 @@ links.forEach(link => {
 
 /*-- función que maneja los eventos de escucha de los links y botones principales --*/
 
-
 const botones = [
     { id: 'href-inicio', url: 'inicio.html', agregarClase: false },
     { id: 'href-contacto', url: 'contacto.html', agregarClase: true },
@@ -36,6 +35,7 @@ botones.forEach(boton => {
     });
 });
 
+/* -- Resalta el link del nav de la pagina actual y llama a la funcion cargarContenido -- */
 function manejarClick(event, url, agregarClase) {
     event.preventDefault();
     if (agregarClase)
@@ -59,7 +59,6 @@ function cargarContenido(html) {
         'nosotros.html': cargarNosotros,
         'contacto.html': cargarContacto,
         'servicios.html': cargarServicios,
-        'donacion.html': cargarDonaciones,
         'login.html': cargarLogin,
         'administracion.html': cargarAdministracion
     };
@@ -77,6 +76,8 @@ function cargarInfoServicios() {
     //Ver como solucionar los multiples carrusel;
 }
 
+/* -- Escucha los botones de la pagina de inicio -- */
+
 function cargarInicio() {
     const botones = [
         { id: 'btn-ver-servicios', url: 'servicios.html', agregarClase: false },
@@ -89,18 +90,10 @@ function cargarInicio() {
             manejarClick(event, boton.url, boton.agregarClase);
         });
     });
-
-    document.getElementById('btnVerGallery').addEventListener('click', cargarGaleria);
 }
 
 
-function cargarGaleria() {
-
-}
-
-function cargarDonaciones() {
-
-}
+/*-- Muestra los parrafos ocultos al clickear en el boton correspondiente de la pagina de nosotros -- */
 
 function cargarNosotros() {
     document.querySelectorAll('.btn').forEach(button => {
@@ -120,6 +113,7 @@ function cargarNosotros() {
 
 }
 
+/*-- Escucha los botones de la pagina de servicios -- */
 function cargarServicios() {
     const botones = [
         { id: 'btn-ver-hogar', url: 'hogar.html' },
@@ -136,7 +130,7 @@ function cargarServicios() {
 }
 
 
-/* Carga la pagina de publicar, solo se puede acceder estando logueado como administración */
+/*-- Carga la pagina de publicar, solo se puede acceder estando logueado como administración --*/
 
 function cargarAdministracion() {
     document.getElementById('btn-cargar-imagen').addEventListener('click', function () {
@@ -152,9 +146,21 @@ function cargarAdministracion() {
             }
         });
     });
+
+
+    /* Carga el modal de confirmación  */
+    document.getElementById('form_publicacion').addEventListener('submit', function(e) {
+        e.preventDefault();
+        console.log('entre aca');
+        $('#myModal').modal('show');
+        $('#myModal').on('shown.bs.modal', function () {
+          $('#msj').trigger('focus');
+          console.log('o aca');
+        });
+    }); 
 }
 
-/* Carga la pagina de contacto y su formulario con control de errores */
+/* -- Carga la pagina de contacto y su formulario con control de errores -- */
 
 function cargarContacto() {
     const errorEmail = document.getElementById('errorEmail');
@@ -166,7 +172,7 @@ function cargarContacto() {
     });
 }
 
-/* Carga la pagina de login con el control de email en tiempo real y contraseña valida */
+/* -- Carga la pagina de login con el control de email en tiempo real y contraseña valida -- */
 
 function cargarLogin() {
     actualizarEstadoSesion();
@@ -181,6 +187,8 @@ function cargarLogin() {
     btnCerrarSesion.addEventListener('click', manejarCerrarSesion);
     password_reset.addEventListener('click', resetPasword);
 }
+
+/*-- Chequea los valores ingreados en el formulario de login  -- */
 
 const email = 'administracion@gmail.com';
 const password = '123456789';
@@ -197,11 +205,15 @@ function manejarSubmit(event) {
     }
 }
 
+/* -- Desabilita la pagina visible solo para el adiministrador -- */
+
 function manejarCerrarSesion(event) {
     event.preventDefault();
     esta_logueado = false;
     actualizarEstadoSesion();
 }
+
+/* -- Muestra un mensaje al clickear en olvido su contraseña -- */
 
 function resetPasword() {
     ocultarElementos(document.getElementById('form-login'));
@@ -209,6 +221,8 @@ function resetPasword() {
     mostrarElementos(msj)
     msj.innerHTML = 'Se ha enviado un correo de restauración de contraseña a su casilla.'
 }
+
+/* -- Muestra y oculta elementos y los actualiza segun sesión inicida -- */
 
 function actualizarEstadoSesion() {
     const titulo = document.getElementById('titulo-login');
@@ -238,7 +252,7 @@ function ocultarElementos(...elementos) {
     elementos.forEach(elemento => elemento.classList.add('oculto'));
 }
 
-/* Controla email valido en tiempo real */
+/*-- Controla email valido en tiempo real --*/
 
 function controlarEmail(email, errorEmail) {
     const emailInput = document.getElementById(email);
@@ -252,7 +266,8 @@ function controlarEmail(email, errorEmail) {
     });
 }
 
-/* Función del carrusel */
+/*-- Función del carrusel --*/
+
 let index = 0;
 function moveSlide(direction) {
     const slides = document.querySelectorAll(".carrusel img");
@@ -269,6 +284,9 @@ function moveSlide(direction) {
     const offset = -index * 100; // Cada imagen ocupa el 100% del ancho
     document.querySelector(".carrusel").style.transform = `translateX(${offset}%)`;
 }
+
+/* -- Función que despliega la galeria de fotos -- */
+
 function openGallery() {
     const galleryContainer = document.getElementById('gallery');
     const btnGallery = document.getElementById('btnVerGallery');
@@ -280,6 +298,7 @@ function openGallery() {
 
     galleryContainer.classList.toggle('hidden');
 }
+
 
 // Función que cambia el orden de los elementos
 function cambiarOrden() {
