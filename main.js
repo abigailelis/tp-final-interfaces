@@ -37,6 +37,9 @@ const botones = [
     { id: 'href-nosotros', url: 'nosotros.html', agregarClase: false },
     { id: 'href-login', url: 'login.html', agregarClase: true },
     { id: 'href-publicar', url: 'administracion.html', agregarClase: true },
+    { id: 'href-hogar', url: 'hogar.html', agregarClase: false },
+    { id: 'href-centro', url: 'centroDia.html', agregarClase: false },
+    { id: 'href-taller', url: 'taller.html', agregarClase: false },
     { id: 'btn-donar', url: 'donacion.html', agregarClase: false }
 ];
 
@@ -84,7 +87,7 @@ function cargarContenido(html) {
 }
 
 function cargarInfoServicios() {
-    //Ver como solucionar los multiples carrusel;
+
 }
 
 /* -- Escucha los botones de la pagina de inicio -- */
@@ -110,15 +113,14 @@ function cargarNosotros() {
     document.querySelectorAll('.btn').forEach(button => {
         button.addEventListener('click', function () {
             const parrafoOculto = this.previousElementSibling;
-            parrafoOculto.classList.toggle('oculto');
+            parrafoOculto.classList.toggle('hidden');
 
-            if (parrafoOculto.classList.contains('oculto'))
+            if (parrafoOculto.classList.contains('hidden'))
                 this.textContent = 'Ver más';
             else
                 this.textContent = 'Cerrar';
         });
     });
-
 }
 
 /*-- Escucha los botones de la pagina de servicios -- */
@@ -199,7 +201,7 @@ function cargarLogin() {
 /*-- Chequea los valores ingreados en el formulario de login  -- */
 
 const email = 'administracion@gmail.com';
-const password = '123456789';
+const password = '123';
 
 function manejarSubmit(event) {
     event.preventDefault();
@@ -239,16 +241,19 @@ function actualizarEstadoSesion() {
     const msjExito = document.getElementById('msj_sesion');
     const btnCerrarSesion = document.getElementById('btn-cerrar-sesion');
     const form = document.getElementById('form-login');
+    const imagenLogin = document.getElementById('logo-sesion');
 
 
     if (esta_logueado) {
         titulo.innerHTML = 'Cerrar sesión';
         ocultarElementos(errorEmail, msjError, form);
         mostrarElementos(msjExito, link_publicar, btnCerrarSesion);
+        imagenLogin.src = 'images/logout.png';
     } else {
         titulo.innerHTML = 'Iniciar sesión';
         ocultarElementos(msjExito, link_publicar, btnCerrarSesion);
         mostrarElementos(form);
+        imagenLogin.src = 'images/login.png';
     }
 }
 
@@ -304,7 +309,7 @@ function openGallery() {
         return;
     }
 
-    galleryContainer.classList.toggle('hidden');
+    galleryContainer.classList.toggle('oculto');
 }
 
 

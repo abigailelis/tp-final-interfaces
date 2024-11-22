@@ -1,38 +1,22 @@
-<div class="container contenido-principal d-flex flex-column">
+<div>
     <section>
-
-        <div class="d-flex flex-column align-items-center contenedor-imagen-enlace">
+        <div class="d-flex flex-column align-items-center justify-content-around contenedor-imagen-enlace" id="img-1">
             <h2 class="text-center">SERVICIOS</h2>
-            <div class="contenedor-imagen">
-                <figure>
-                    <img src="images/img-servicios.jpg" class="imagen-link" alt="imágen de niño jugando">
-                    <figcaption>Conocé los servicios que ofrece la asociación: Hogar, Centro de día y Taller protegido
-                    </figcaption>
-                </figure>
-            </div>
+            <h3>Conocé los servicios que ofrece la asociación: Hogar, Centro de día y Taller protegido
+            </h3>
             <button class="btn btn-brown btn-ver-mas" type="button" id="btn-ver-servicios">Ver más</button>
         </div>
-
-        <div class="d-flex flex-column align-items-center contenedor-imagen-enlace">
+    </section>
+        <div class="d-flex flex-column align-items-center justify-content-around contenedor-imagen-enlace" id="img-2">
             <h2>CONTACTO</h2>
-            <div class="contenedor-imagen">
-                <figure>
-                    <img src="images/img-contacto.jfif" class="imagen-link" alt="imágen de logo principal">
-                    <figcaption>Comunicate con nosotros y conocé nuestras redes sociales.</figcaption>
-                </figure>
-            </div>
+            <h3>Comunicate con nosotros y conocé nuestras redes sociales.</h3>
             <button class="btn btn-brown btn-ver-mas" type="button" id="btn-ver-contacto">Ver más</button>
         </div>
 
-        <div class="d-flex flex-column align-items-center contenedor-imagen-enlace">
+        <div class="d-flex flex-column align-items-center justify-content-around contenedor-imagen-enlace" id="img-3">
             <h2>NOSOTROS</h2>
-            <div class="contenedor-imagen">
-                <figure>
-                    <img src="images/natacion.jpg" class="imagen-link" alt="imágen de niño jugando">
-                    <figcaption>Conocé más sobre nuestra misión, cuáles son nuestros objetivos y cuál es la
-                        visión principal de la asociación.</figcaption>
-                </figure>
-            </div>
+            <h3>Conocé más sobre nuestra misión, cuáles son nuestros objetivos y cuál es la
+                        visión principal de la asociación.</h3>
             <button class="btn btn-brown btn-ver-mas" type="button" id="btn-ver-nosotros">Ver más</button>
         </div>
 
@@ -40,65 +24,69 @@
     <!-- Carrusel -->
 
     <div class="div-carrusel d-flex flex-column align-items-center">
-        <h3 class="text-center">Galeria de Fotos</h3>
+        <h3 class="text-center">Galeria de fotos</h3>
         <div class="carrusel-container">
-            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="prev btn-slide" onclick="moveSlide(-1)">&#10094;</button>
             <div class="carrusel d-flex">
                 <img src="images/prestacion-servicios.jfif" id="imagen1" alt="Imagen 1">
                 <img src="images/natacion.jpg" id="imagen2" alt="Imagen 2">
-                <img src="images/panaderos.jfif" id="imagen3" alt="Imagen 3">
+                <img src="images/equinoterapia.jpg" id="imagen3" alt="Imagen 3">
             </div>
-            <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            <button class="next btn-slide" onclick="moveSlide(1)">&#10095;</button>
 
             <!-- Botón "Ver más" dentro del carrusel -->
-            <button class="btn btn-white" type="button" id="btnVerGallery" onclick="openGallery()">Ver más</button>
+            <button class="btn" type="button" id="btnVerGallery" onclick="openGallery()">Ver más</button>
         </div>
     </div>
 
 
     <!-- galeria -->
-    <div class="div-galeria-oculto hidden" id="gallery">
+    <div class="div-galeria-oculto oculto" id="gallery">
 
         <div class="div-galeria d-flex justify-content-between">
             <div class="col-6 card p-1">
-                <img src="images/equinoterapia.jpg" class="img-fluid card-img-top h-50" alt="imagen 1">
                 <div class="card-body">
+                    <img src="images/equinoterapia.jpg" class="img-fluid card-img-top h-50" alt="imagen 1">
                     <h5 class="card-title">Día de equinoterapia</h5>
                     <p class="card-text">El clima nos acompañó en esta actividad de equinoterapia</p>
                 </div>
             </div>
             <div class="col-6 card p-1">
-                <img src="images/caminatas.jpeg" class="img-fluid card-img-top h-50" alt="imagen 2">
                 <div class="card-body">
+                    <img src="images/caminatas.jpeg" class="img-fluid card-img-top h-50" alt="imagen 2">
                     <h5 class="card-title">Caminata</h5>
-                    <p class="card-text">Este hermoso dia nos permitio participar en una caminata al aire libre, disfrutando de la naturaleza y la compañía</p>
+                    <p class="card-text">Este hermoso dia nos permitio participar en una caminata al aire libre,
+                        disfrutando de la naturaleza y la compañía</p>
                 </div>
             </div>
             <div class="col-6 card p-1">
-                <img src="images/recuperado-rsu.jpg" class="img-fluid card-img-top h-50" alt="imagen 3">
                 <div class="card-body">
+                    <img src="images/recuperado-rsu.jpg" class="img-fluid card-img-top h-50" alt="imagen 3">
                     <h5 class="card-title">Recuperado de R.S.U</h5>
-                    <p class="card-text">En el día de hoy los chicos trabajaron en grupos y se realizó la tarea de recuperado de residuos sólidos urbanos.
+                    <p class="card-text">En el día de hoy los chicos trabajaron en grupos y se realizó la tarea de
+                        recuperado de residuos sólidos urbanos.
                     </p>
                 </div>
             </div>
             <div class="col-6 card p-1">
-                <img src="images/natacion.jpg" class="img-fluid card-img-top h-50" alt="imagen 1">
                 <div class="card-body">
+                    <img src="images/natacion.jpg" class="img-fluid card-img-top h-50" alt="imagen 1">
                     <h5 class="card-title">Día de pile!</h5>
-                    <p class="card-text">Compartiendo un lindo día de pile, muy refrescante y con muchas actividades.</p>
+                    <p class="card-text">Compartiendo un lindo día de pile, muy refrescante y con muchas actividades.
+                    </p>
                 </div>
             </div>
             <div class="col-6 card p-1">
-                <img src="images/panaderos.jfif" class="img-fluid card-img-top h-50" alt="imagen 2">
                 <div class="card-body">
+                    <img src="images/panaderos.jfif" class="img-fluid card-img-top h-50" alt="imagen 2">
                     <h5 class="card-title">Panadería</h5>
-                    <p class="card-text">Hoy los chicos disfrutaron de una clase de panadería, aprendiendo y creando deliciosos panes.</p>
+                    <p class="card-text">Hoy los chicos disfrutaron de una clase de panadería, aprendiendo y creando
+                        deliciosos panes.</p>
                 </div>
             </div>
             <div class="col-6 card p-1">
-                <img src="images/mermeladas.jfif" class="img-fluid card-img-top h-50" alt="imagen 3">
                 <div class="card-body">
+                    <img src="images/mermeladas.jfif" class="img-fluid card-img-top h-50" alt="imagen 3">
                     <h5 class="card-title">Mermeladas y miel</h5>
                     <p class="card-text">En la fiesta de inauguración de temporada podrán encontrar nuestros productos
                         naturales en los stands.</p>
