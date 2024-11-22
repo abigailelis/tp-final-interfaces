@@ -17,7 +17,18 @@ links.forEach(link => {
     });
 });
 
-/*-- función que maneja los eventos de escucha de los links y botones principales --*/
+window.addEventListener('scroll', function () {
+    const header = document.getElementById('header');
+    const navbar = document.getElementById('navbar');
+    const headerHeight = header.offsetHeight;
+    if (window.scrollY > headerHeight) {
+        navbar.classList.add('navbar-fixed');
+        document.body.style.paddingTop = navbar.offsetHeight + 'px';
+    } else {
+        navbar.classList.remove('navbar-fixed');
+        document.body.style.paddingTop = '0';
+    }
+});
 
 const botones = [
     { id: 'href-inicio', url: 'inicio.html', agregarClase: false },
@@ -99,10 +110,7 @@ function cargarNosotros() {
     document.querySelectorAll('.btn').forEach(button => {
         button.addEventListener('click', function () {
             const parrafoOculto = this.previousElementSibling;
-            const parrafoVisible = parrafoOculto.previousElementSibling;
-
             parrafoOculto.classList.toggle('oculto');
-            parrafoVisible.classList.toggle('oculto');
 
             if (parrafoOculto.classList.contains('oculto'))
                 this.textContent = 'Ver más';
@@ -149,15 +157,15 @@ function cargarAdministracion() {
 
 
     /* Carga el modal de confirmación  */
-    document.getElementById('form_publicacion').addEventListener('submit', function(e) {
+    document.getElementById('form_publicacion').addEventListener('submit', function (e) {
         e.preventDefault();
         console.log('entre aca');
         $('#myModal').modal('show');
         $('#myModal').on('shown.bs.modal', function () {
-          $('#msj').trigger('focus');
-          console.log('o aca');
+            $('#msj').trigger('focus');
+            console.log('o aca');
         });
-    }); 
+    });
 }
 
 /* -- Carga la pagina de contacto y su formulario con control de errores -- */

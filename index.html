@@ -11,88 +11,68 @@
 </head>
 
 <body>
-  <!-- Header -->
-  <header>
-    <!-- Head -->
-    <div class="head">
-      <div class="div-logo">
-        <img src="images/logo-principal.png" class="logo-principal" alt="logo de 'Todo para Ellos'" />
-      </div>
-      <div class="div-text">
-        <span class="fs-2">TODO PARA ELLOS</span>
-        <span class="font-12">Asociación de Padres y Amigos del Discapacitado</span>
-      </div>
-      <div class="div-btn-donar">
-        <button type="button" class="btn btn-donar btn-brown" id="btn-donar">
-          DONAR
-        </button>
-      </div>
-      <div class="div-login">
-        <a href="login" id="href-login">
-          <img src="images/login.png" class="logo" alt="logo de iniciar sesión" />
-        </a>
-      </div>
+  <header id="header"> <!-- Head -->
+    <div class="head d-flex justify-content-between align-items-center">
+      <section class="d-flex">
+        <div class="div-logo"> <img src="images/logo-principal.png" class="logo-principal"
+            alt="logo de 'Todo para Ellos'" /> </div>
+        <div class="div-text"> <span class="fs-2">TODO PARA ELLOS</span> <span class="font-12">Asociación de Padres y
+            Amigos del Discapacitado</span> </div>
+      </section>
+      <section class="d-flex justify-content-between">
+        <div class="div-btn-donar"> <button type="button" class="btn btn-donar btn-brown" id="btn-donar"> DONAR
+          </button> </div>
+        <div class="div-login"> <a href="login" id="href-login"> <img src="images/login.png" class="logo"
+              alt="logo de iniciar sesión" /> </a> </div>
+      </section>
     </div>
-  </header>
-  <!-- Nav -->
-  <div class="nav">
+  </header> <!-- Nav -->
+  <div class="nav" id="navbar">
     <div class="navbar navbar-expand-lg">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+      <div class="container-fluid"> <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" href="INICIO" id="href-inicio">INICIO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="SERVICIOS" id="href-servicios">SERVICIOS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="CONTACTO" id="href-contacto">CONTACTO</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="NOSOTROS" id="href-nosotros">NOSOTROS</a>
-            </li>
-            <li class="nav-item oculto" id="link-publicar">
-              <a class="nav-link" href="PUBLICAR" id="href-publicar">PUBLICAR</a>
-            </li>
+            <li class="nav-item"> <a class="nav-link" href="INICIO" id="href-inicio">INICIO</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="SERVICIOS" id="href-servicios">SERVICIOS</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="CONTACTO" id="href-contacto">CONTACTO</a> </li>
+            <li class="nav-item"> <a class="nav-link" href="NOSOTROS" id="href-nosotros">NOSOTROS</a> </li>
+            <li class="nav-item oculto" id="link-publicar"> <a class="nav-link" href="PUBLICAR"
+                id="href-publicar">PUBLICAR</a> </li>
           </ul>
         </div>
       </div>
     </div>
   </div>
-
   <!-- Contenido dinamico -->
   <main id="contenido-dinamico"></main>
 
   <!--Footer -->
   <footer>
-    <div class="footer">
-      <div class="logo-telefono">
-        <img src="images/logo-telefono-blanco.png" class="logo-footer" alt="logo de telefono" />
-      </div>
-      <div class="telefono-footer">
-        <p>(+54) 2262 43-7235</p>
-      </div>
-      <div class="logo-direccion">
-        <img src="images/logo-direccion-blanco.png" class="logo-footer" alt="logo de dirección" />
-      </div>
-      <div class="direccion-footer">
-        <p>Calle 79 Nº 675 - Necochea (7630)</p>
-      </div>
-      <div class="logo-facebook-footer">
-        <a href="https://www.facebook.com/todoparaellos.necochea/">
-          <img src="images/logo-facebook-blanco.png" class="logo-footer-redes" alt="logo de facebook" />
-        </a>
-      </div>
-      <div class="logo-instagram-footer">
-        <a href="https://www.instagram.com/todoparaellosnecochea/">
-          <img src="images/logo-instagram-blanco.png" class="logo-footer-redes" alt="logo de instagram" />
-        </a>
-      </div>
+    <div class="footer d-flex align-items-center justify-content-between">
+      <section class="section-info-footer d-flex align-items-center justify-content-around">
+        <div class="info-footer d-flex">
+          <img src="images/logo-telefono-blanco.png" class="logo-footer" alt="logo de telefono" />
+          <p>(+54) 2262 43-7235</p>
+        </div>
+        <div class="info-footer d-flex">
+          <img src="images/logo-direccion-blanco.png" class="logo-footer" alt="logo de dirección" />
+          <p>Calle 79 Nº 675 - Necochea (7630)</p>
+        </div>
+      </section>
+      <section class="d-flex align-items-center">
+        <div class="logo-facebook-footer">
+          <a href="https://www.facebook.com/todoparaellos.necochea/">
+            <img src="images/logo-facebook-blanco.png" class="logo-footer-redes" alt="logo de facebook" />
+          </a>
+        </div>
+        <div class="logo-instagram-footer">
+          <a href="https://www.instagram.com/todoparaellosnecochea/">
+            <img src="images/logo-instagram-blanco.png" class="logo-footer-redes" alt="logo de instagram" />
+          </a>
+        </div>
+      </section>
     </div>
   </footer>
 

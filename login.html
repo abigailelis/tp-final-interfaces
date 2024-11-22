@@ -1,37 +1,40 @@
-<div class="container contenido-principal d-flex flex-column justify-content-center align-items-center">
-    <section class="form-content">
-        <img src="images/logo-login.png" class="logo-login" alt="logo de login">
-        <h1 id="titulo-login">Iniciar sesión</h1>
+<div class="container contenido-principal d-flex flex-column">
+    <section class="d-flex flex-column justify-content-center align-items-center">
+        <div class="form-content d-flex flex-column justify-content-center align-items-center w-50">
+            <img src="images/logo-login.png" class="logo-login" alt="logo de login">
+            <h1 id="titulo-login">Iniciar sesión</h1>
 
-        <section id="msj_error" class="oculto">
-            <p>Los datos ingresados no son correctos.</p>
-            <p>Por favor vuelva a intentarlo.</p>
-        </section>
-        <section id="msj_sesion" class="oculto">
-            <p>Has iniciado sesión como Administrador</p>
-        </section>
+            <section id="msj_error" class="oculto">
+                <p>Los datos ingresados no son correctos.</p>
+                <p>Por favor vuelva a intentarlo.</p>
+            </section>
+            <section id="msj_sesion" class="oculto">
+                <p>Has iniciado sesión como Administrador</p>
+            </section>
 
-        <form action="" id="form-login">
-            <div class="d-grid gap-2 div-inputs">
+            <div class="w-75">
+                <form action="" id="form-login">
+                    <div class="d-grid gap-2 ">
+                        <div class="inputs d-flex justify-content-center align-items-center">
+                            <img src="images/logo-email.png" class="logo-form icon" alt="logo de email">
+                            <input type="email" name="email" id="email" class="input"
+                                placeholder="Ingrese su correo electrónico">
+                        </div>
 
-                <div class="inputs">
-                    <img src="images/logo-email.png" class="logo-form icon" alt="logo de email">
-                    <input type="email" name="email" id="email" class="input"
-                        placeholder="Ingrese su correo electrónico">
-                </div>
+                        <span id="errorEmail" class="error oculto">Por favor, introduce un email válido.</span>
 
-                <span id="errorEmail" class="error oculto">Por favor, introduce un email válido.</span>
-                
-                <div class="inputs">
-                    <img src="images/logo-password.png" class="logo-form icon" alt="logo de email">
-                    <input type="password" name="password" id="password" class="input"
-                        placeholder="Ingrese su contraseña">
-                </div>
+                        <div class="inputs d-flex justify-content-center align-items-center">
+                            <img src="images/logo-password.png" class="logo-form icon" alt="logo de email">
+                            <input type="password" name="password" id="password" class="input"
+                                placeholder="Ingrese su contraseña">
+                        </div>
 
-                <a href="#" id="link-olvido-password">¿Has olvidado tu contraseña?</a>
-                <button class="btn btn-brown" type="submit" id="btn-iniciar-sesion">Iniciar sesión</button>
+                        <a href="#" id="link-olvido-password">¿Has olvidado tu contraseña?</a>
+                        <button class="btn btn-brown" type="submit" id="btn-iniciar-sesion">Iniciar sesión</button>
+                    </div>
+                </form>
+                <button class="oculto btn btn-brown " type="button" id="btn-cerrar-sesion">Cerrar sesión</button>
             </div>
-        </form>
-        <button class="oculto btn btn-brown " type="button" id="btn-cerrar-sesion">Cerrar sesión</button>
+        </div>
     </section>
 </div>
