@@ -312,26 +312,3 @@ function openGallery() {
     galleryContainer.classList.toggle('oculto');
 }
 
-
-// Función que cambia el orden de los elementos
-function cambiarOrden() {
-    const contenedor = document.getElementById("contenedorgeneral");
-    const contenedor1 = document.getElementById("c1");
-    const contenedor2 = document.getElementById("c2");
-
-    // Comprobar si el tamaño de la ventana es menor o igual a 760px
-    if (window.innerWidth <= 1260) {
-        // Cambiar el orden (colocar c2 primero y luego c1)
-        contenedor.insertBefore(contenedor2, contenedor1);
-    } else {
-        // Restaurar el orden original (colocar c1 primero y luego c2)
-        contenedor.appendChild(contenedor1);
-        contenedor.appendChild(contenedor2);
-    }
-}
-
-// Ejecutar la función al cargar la página
-window.addEventListener("load", cambiarOrden);
-
-// Ejecutar la función cada vez que la ventana cambia de tamaño
-window.addEventListener("resize", cambiarOrden);
