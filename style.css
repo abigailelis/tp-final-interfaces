@@ -115,6 +115,7 @@ a.dropdown-item:hover {
 
 .bg-img {
     background-image: url('./images/bg-image.PNG');
+    background-position: center center;
     background-size: cover;
 }
 
@@ -250,7 +251,7 @@ div.card-body {
 .form-content,
 .info-contacto {
     color: #99975F;
-    width: 60%;
+    max-width: 50%;
     padding: 30px;
     background-color: rgba(255, 255, 255, 0.801);
     box-shadow: 1px 1px 10px #656666;
@@ -336,11 +337,12 @@ a#link-olvido-password:hover {
 /*-------- CONTENEDOR DONACIONES -------*/
 
 .contenedor-donaciones {
+    max-width: 95dvw;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    justify-items: stretch;
+    justify-items: center;
     gap: 30px;
-    margin-top: 30px;
+    margin-top: 50px;
     color: #808080;
 }
 
@@ -382,6 +384,11 @@ a#link-olvido-password:hover {
 .div-maps {
     flex-direction: column;
     margin-bottom: 3em;
+}
+
+iframe{
+    width:80%;
+    height: 40dvh;
 }
 
 /*--- CONTENEDORES SERVICIOS -----*/
@@ -542,7 +549,7 @@ button#btn-cerrar-sesion {
 .carrusel-container {
     position: relative;
     width: 80%;
-    height: 400px;
+    height: 70dvh;
     overflow: hidden;
     border-radius: 10px;
     margin-top: 50px;
@@ -605,7 +612,7 @@ button#btn-cerrar-sesion {
 .img-servicios {
     box-shadow: 2px 2px 8px #445D63;
     width: 100%;
-    height: 400px;
+    height: 70dvh;
     object-fit: cover;
 }
 
@@ -619,6 +626,8 @@ button#btn-cerrar-sesion {
     .container.contenido-principal {
         display: flex;
         flex-direction: column;
+        margin: 0;
+        min-width: 100%;
     }
 
     .contenedor-imagen-enlace {
@@ -639,25 +648,31 @@ button#btn-cerrar-sesion {
 
     .div-carrusel {
         width: 100vw;
+        margin-bottom: 0;
+        margin-top: 10em;
+    }
+
+    .carrusel{
+        height: 55dvh
     }
 
     .carrusel-container .btn-slide {
         top: 30%;
         transform: translateY(-50%);
-        padding: 10px;
+        font-size: 30px;
     }
 
     .carrusel-container {
-        min-height: 100%;
-        min-height: 70vh;
+        height: calc(100dvh - 200px)
+    }
+
+    button.btn-ver-mas,button#btnVerGallery{
+        width: 150px;
+        font-size: 20px;
     }
 
     .carrusel-container #btnVerGallery {
-        top: 70%;
-    }
-
-    .carrusel img {
-        min-height: 100%;
+        top: 85%;
     }
 
     .imagen-link {
@@ -684,8 +699,13 @@ button#btn-cerrar-sesion {
         padding-bottom: 200px;
         box-sizing: border-box;
     }
+
     div.card {
         width: 100%;
+    }
+
+    .form-content, .info-contacto{
+        width: 60dvw;
     }
 }
 
@@ -742,4 +762,27 @@ button#btn-cerrar-sesion {
         font-size: 14px;
     }
 
+    .form-content, .info-contacto{
+        min-width: 90dvw;
+    }
+
+    .contenedor-donaciones{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px 0 10px;
+    }
+    .titulo-donaciones h1{
+        font-size: 1.5rem;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 0;
+    }
+    .contenedor-imagen-enlace .text-h2{
+        font-size: 50px;
+    }
+
+    .img-servicios{
+        height: 30dvh;
+    }
 }
