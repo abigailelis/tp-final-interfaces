@@ -278,6 +278,10 @@ span.input-label {
     margin: 0;
 }
 
+.span-negrita{
+    font-weight: bold;
+}
+
 .input-label {
     padding-left: 15px;
 }
