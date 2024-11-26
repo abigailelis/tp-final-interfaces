@@ -312,3 +312,4 @@ function openGallery() {
     galleryContainer.classList.toggle('oculto');
 }
 
+

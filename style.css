@@ -190,8 +190,7 @@ div.contenido-principal {
     object-fit: cover;
 }
 
-button.btn-ver-mas,
-button#btnVerGallery {
+button.btn-ver-mas,button#btnVerGallery {
     width: 200px;
     height: 50px;
     font-size: 25px;
@@ -201,10 +200,12 @@ button#btnVerGallery {
 .div-texto-ver-mas {
     width: 100%;
 }
+
 .contenedor-imagen-enlace .text-h2{
     font-size: 95px;
 }
-.translucido {
+
+.texto-oculto{
     padding: 2% 10% 2% 10%;
     bottom: 0;
     background: rgba(255, 255, 255, 0.921);
