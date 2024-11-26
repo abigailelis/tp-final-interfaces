@@ -8,6 +8,11 @@ header {
     color: #333333;
 }
 
+h3 {
+    color: #000000;
+    text-shadow: 0 0 5px #aca830, 0 0 5px #5c5c5c, 0 0 15px #99975F, 0 0 20px #99975F, 0 0 30px #99975F;
+}
+
 /*---------------- HEAD ---------------------*/
 .head {
     background-color: #F0F0F0;
@@ -207,7 +212,7 @@ button#btnVerGallery {
 .translucido {
     padding: 2% 10% 2% 10%;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.921);
+    backdrop-filter: blur(15px);
 }
 
 /*--- GALERIA ---*/
