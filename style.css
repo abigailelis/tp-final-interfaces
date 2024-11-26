@@ -8,9 +8,14 @@ header {
     color: #333333;
 }
 
-h3 {
-    color: #000000;
-    text-shadow: 0 0 5px #aca830, 0 0 5px #5c5c5c, 0 0 15px #99975F, 0 0 20px #99975F, 0 0 30px #99975F;
+.txt-titulo {
+    font-size: 45px;
+    text-shadow: 2px 0px 2px #787878;
+}
+
+.txt-titulo-inicio {
+    font-size: 40px;
+    text-shadow: 2px 0px 2px #787878;
 }
 
 /*---------------- HEAD ---------------------*/
@@ -211,6 +216,7 @@ button.btn-ver-mas,button#btnVerGallery {
 }
 
 .texto-oculto{
+    font-size: 25px;
     padding: 2% 10% 2% 10%;
     bottom: 0;
     backdrop-filter: blur(15px);
