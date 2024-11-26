@@ -8,6 +8,16 @@ header {
     color: #333333;
 }
 
+.txt-titulo {
+    font-size: 45px;
+    text-shadow: 2px 0px 2px #787878;
+}
+
+.txt-titulo-inicio {
+    font-size: 40px;
+    text-shadow: 2px 0px 2px #787878;
+}
+
 /*---------------- HEAD ---------------------*/
 .head {
     background-color: #F0F0F0;
@@ -207,9 +217,10 @@ button.btn-ver-mas,button#btnVerGallery {
 }
 
 .texto-oculto{
+    font-size: 25px;
     padding: 2% 10% 2% 10%;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.921);
+    backdrop-filter: blur(15px);
 }
 
 /*--- GALERIA ---*/
