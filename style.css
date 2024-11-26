@@ -195,8 +195,7 @@ div.contenido-principal {
     object-fit: cover;
 }
 
-button.btn-ver-mas,
-button#btnVerGallery {
+button.btn-ver-mas,button#btnVerGallery {
     width: 200px;
     height: 50px;
     font-size: 25px;
@@ -206,10 +205,12 @@ button#btnVerGallery {
 .div-texto-ver-mas {
     width: 100%;
 }
+
 .contenedor-imagen-enlace .text-h2{
     font-size: 95px;
 }
-.translucido {
+
+.texto-oculto{
     padding: 2% 10% 2% 10%;
     bottom: 0;
     backdrop-filter: blur(15px);
@@ -280,6 +281,10 @@ textarea,
 
 span.input-label {
     margin: 0;
+}
+
+.span-negrita{
+    font-weight: bold;
 }
 
 .input-label {
