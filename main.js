@@ -113,9 +113,9 @@ function cargarNosotros() {
     document.querySelectorAll('.btn').forEach(button => {
         button.addEventListener('click', function () {
             const parrafoOculto = this.previousElementSibling;
-            parrafoOculto.classList.toggle('hidden');
+            parrafoOculto.classList.toggle('oculto');
 
-            if (parrafoOculto.classList.contains('hidden'))
+            if (parrafoOculto.classList.contains('oculto'))
                 this.textContent = 'Ver más';
             else
                 this.textContent = 'Cerrar';
